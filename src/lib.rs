@@ -8,7 +8,7 @@
 ///
 /// ```
 pub mod sse_loader {
-    use serde::{Deserialize};
+    use serde::Deserialize;
     use serde_json::from_str;
 
     use futures::future;
@@ -34,7 +34,8 @@ pub mod sse_loader {
                         &result_string
                     } else {
                         ""
-                    }.to_string()
+                    }
+                    .to_string()
                 } else {
                     "".to_string()
                 }
