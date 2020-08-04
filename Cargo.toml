@@ -4,6 +4,8 @@ version = "0.1.0"
 authors = ["Auryn Engel <auryn.engel@sap.com>"]
 edition = "2018"
 repository = "https://github.com/auryn31/rust-async-sse-loader"
+description = "Load and parse data from an SSE url."
+license = "MIT OR Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
