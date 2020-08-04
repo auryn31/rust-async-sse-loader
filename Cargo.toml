@@ -1,6 +1,6 @@
 [package]
 name = "async-sse-loader"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Auryn Engel <auryn.engel@sap.com>"]
 edition = "2018"
 repository = "https://github.com/auryn31/rust-async-sse-loader"
