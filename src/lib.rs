@@ -11,15 +11,14 @@ pub mod sse_loader {
     use serde::Deserialize;
     use serde_json::from_str;
 
-    use futures::future;
     use futures::stream::StreamExt;
     use futures_core::Stream;
 
-    pub async fn load_stream<'output, T>(
+    pub async fn load_stream<T>(
         url: &str,
-    ) -> Result<std::pin::Pin<Box<dyn Stream<Item = T> + 'output>>, reqwest::Error>
+    ) -> Result<impl Stream<Item = T>, reqwest::Error>
     where
-        T: for<'a> Deserialize<'a> + 'output,
+        T: for<'a> Deserialize<'a>,
     {
         let res = reqwest::get(url)
             .await?
@@ -44,7 +43,7 @@ pub mod sse_loader {
                     })
                     .flatten()
             })
-            .filter_map(|it: String| future::ready(from_str::<T>(&it).ok()));
+            .filter_map(|it: String| async move { from_str::<T>(&it).ok() });
         Ok(Box::pin(res))
     }
 }
