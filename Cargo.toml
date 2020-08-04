@@ -3,6 +3,7 @@ name = "async-sse-loader"
 version = "0.1.0"
 authors = ["Auryn Engel <auryn.engel@sap.com>"]
 edition = "2018"
+repository = "https://github.com/auryn31/rust-async-sse-loader"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
