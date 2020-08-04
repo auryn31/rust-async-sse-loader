@@ -1,12 +1,3 @@
-/// Load and parse data from an url that serves them via sse
-///
-/// # Examples
-///
-/// ```
-/// let url = "https://example.com";
-/// let answer = sse_loader::load_stream(arg);
-///
-/// ```
 pub mod sse_loader {
     use serde::Deserialize;
     use serde_json::from_str;
